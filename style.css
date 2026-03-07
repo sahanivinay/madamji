@@ -627,7 +627,70 @@ body {
     font-weight: 700;
     cursor: pointer;
 }
+/* Base Resets for Responsiveness */
+body, html {
+    overflow-x: hidden; /* Prevents side-scrolling on mobile */
+    width: 100%;
+}
 
+#wrapper {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Responsive adjustments for Tablets and Mobile */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column-reverse; /* Put the image/box on top, text below */
+        text-align: center;
+    }
+
+    .flag__birthday img {
+        width: 150px; /* Shrink flags for mobile */
+    }
+
+    .left, .right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .happy, .birthday {
+        font-size: 2.5rem; /* Scale down text size */
+    }
+
+    .boxMail-container {
+        width: 90%; /* Ensure the letter box doesn't overflow */
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .card1, .card2 {
+        width: 100% !important;
+        position: relative !important;
+    }
+}
+
+/* Adjustments for very small phones */
+@media (max-width: 480px) {
+    .happy, .birthday {
+        font-size: 1.8rem;
+    }
+    
+    .box__account {
+        transform: scale(0.8); /* Scale down the profile box if it's too big */
+    }
+}
 
 
 @media screen and (max-width: 658px)   {
